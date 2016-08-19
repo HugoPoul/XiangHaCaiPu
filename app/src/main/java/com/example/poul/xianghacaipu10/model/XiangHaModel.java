@@ -10,11 +10,11 @@ import com.example.poul.xianghacaipu10.utils.HAAsyncTask;
  */
 public class XiangHaModel implements HAModel {
     @Override
-    public void getData(Qiao qiao,String path) {
+    public void getData(Qiao qiao, String path) {
         ProgressDialog progressDialog = new ProgressDialog(MyApp.context);
         progressDialog.setTitle("加载中......");
         progressDialog.setMessage("页面正在加载中");
         progressDialog.setCancelable(false);
-        new HAAsyncTask(qiao).execute(path);
+        new HAAsyncTask(qiao,progressDialog).execute(path);
     }
 }

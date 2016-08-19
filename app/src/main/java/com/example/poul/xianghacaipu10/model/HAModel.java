@@ -5,7 +5,8 @@ package com.example.poul.xianghacaipu10.model;
  */
 public interface HAModel {
     void getData(Qiao qiao, String path);
-    public interface Qiao{
-        void qiao(byte[] bytes,String path);
+
+    public interface Qiao {
+        void qiao(byte[] bytes, String path);
     }
 }

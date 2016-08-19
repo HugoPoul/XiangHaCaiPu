@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.poul.xianghacaipu10.R;
+import com.example.poul.xianghacaipu10.ext.MyApp;
 import com.example.poul.xianghacaipu10.haview.hafragment.HaBBS;
 import com.example.poul.xianghacaipu10.haview.hafragment.LearnCook;
 import com.example.poul.xianghacaipu10.haview.hafragment.HaMarket;
@@ -18,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        MyApp.context = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_fragment_id,new LearnCook()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_fragment_id, new LearnCook()).commit();
     }
 
-    public void onClick(View view){
-        switch (view.getId()){
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.learn_cook:
                 fragment = new LearnCook();
                 break;
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         change(fragment);
     }
 
-    public void change(Fragment fragment){
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_fragment_id,fragment).commit();
+    public void change(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_fragment_id, fragment).commit();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.poul.xianghacaipu10.utils;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 
 import com.example.poul.xianghacaipu10.model.HAModel;
@@ -14,13 +15,28 @@ import java.net.URL;
 /**
  * Created by poul on 2016/8/18.
  */
-public class HAAsyncTask extends AsyncTask<String,Void,byte[]> {
+public class HAAsyncTask extends AsyncTask<String, Integer, byte[]> {
 
     private HAModel.Qiao qiao;
     private String path;
+    private ProgressDialog progressDialog;
+    private int maxLength;
 
     public HAAsyncTask(HAModel.Qiao qiao) {
         this.qiao = qiao;
+    }
+
+    public HAAsyncTask(HAModel.Qiao qiao, ProgressDialog progressDialog) {
+        this.qiao = qiao;
+        this.progressDialog = progressDialog;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        if (progressDialog != null) {
+            progressDialog.show();
+        }
+//        super.onPreExecute();
     }
 
     @Override
@@ -33,13 +49,14 @@ public class HAAsyncTask extends AsyncTask<String,Void,byte[]> {
             httpURLConnection.setReadTimeout(5000);
             httpURLConnection.setRequestMethod("GET");
             httpURLConnection.connect();
-            if(httpURLConnection.getResponseCode() == httpURLConnection.HTTP_OK){
+            if (httpURLConnection.getResponseCode() == httpURLConnection.HTTP_OK) {
+                maxLength = httpURLConnection.getContentLength();
                 InputStream inputStream = httpURLConnection.getInputStream();
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 int len = 0;
-                byte[] b = new byte[1024*8];
-                while ((len = inputStream.read(b)) != -1){
-                    bos.write(b,0,len);
+                byte[] b = new byte[1024 * 8];
+                while ((len = inputStream.read(b)) != -1) {
+                    bos.write(b, 0, len);
                 }
                 return bos.toByteArray();
             }
@@ -52,9 +69,23 @@ public class HAAsyncTask extends AsyncTask<String,Void,byte[]> {
     }
 
     @Override
+    protected void onProgressUpdate(Integer... values) {
+        if (progressDialog != null) {
+            if (progressDialog.getMax() == 0) {
+                progressDialog.setMax(maxLength);
+            }
+            progressDialog.setProgress(values[0]);
+        }
+        super.onProgressUpdate(values);
+    }
+
+    @Override
     protected void onPostExecute(byte[] bytes) {
-        if(qiao != null){
-            qiao.qiao(bytes,path);
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+        }
+        if (qiao != null) {
+            qiao.qiao(bytes, path);
         }
     }
 }

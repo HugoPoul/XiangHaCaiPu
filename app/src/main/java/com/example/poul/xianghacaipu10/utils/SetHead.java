@@ -120,7 +120,5 @@ public class SetHead {
         ImageView active2Bg;
         TextView active3Title,active3SubTitle;
         ImageView active3Bg;
-        //人气美食家
-        HorizontalScrollView horizontalScrollView;
     }
 }
