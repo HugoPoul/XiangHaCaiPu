@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="80sp"
+        android:id="@+id/head_image"
+        android:scaleType="centerCrop"
+        android:layout_height="75sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/head_title"
+        android:textSize="20sp"
+        android:paddingLeft="10sp"
+        android:layout_toRightOf="@+id/head_image"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/head_from"
+        android:layout_alignLeft="@+id/head_title"
+        android:layout_alignBottom="@+id/head_image"
+        android:layout_marginBottom="3pt"
+        android:paddingLeft="10sp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/head_viewcount"
+        android:layout_toLeftOf="@+id/head_pinglun"
+        android:paddingRight="10pt"
+        android:layout_alignBottom="@+id/head_image"
+        android:layout_marginBottom="3pt"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/head_pinglun"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/head_image"
+        android:layout_marginBottom="3pt"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>

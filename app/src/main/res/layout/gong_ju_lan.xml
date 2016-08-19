@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="60sp">
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="今日佳作"
+            android:id="@+id/tody"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:onClick="headBt"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="美食养生"
+            android:id="@+id/yangsheng"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:onClick="headBt"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="美食视频"
+            android:id="@+id/video"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:onClick="headBt"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_weight="1"
+            android:text="菜谱分类"
+            android:id="@+id/fenlei"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:onClick="headBt"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</RelativeLayout>

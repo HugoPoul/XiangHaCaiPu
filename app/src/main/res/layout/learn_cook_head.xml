@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/gong_ju_lan" android:id="@+id/gongjulan"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:background="#ccc"
+        android:layout_height="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:paddingTop="5pt"
+        android:text="香哈头条"
+        android:paddingLeft="5pt"
+        android:textSize="15sp"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/tou_tiao" android:id="@+id/toutiao1"/>
+    <include layout="@layout/tou_tiao" android:id="@+id/toutiao2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:background="#ccc"
+        android:layout_height="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:paddingTop="5pt"
+        android:text="人气美食家"
+        android:paddingLeft="5pt"
+        android:layout_height="wrap_content" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:paddingTop="10dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/toixianglin"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"/>
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:background="#ccc"
+        android:layout_height="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="精选专题"
+        android:padding="10sp"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/activie" android:id="@+id/activ1"/>
+    <include layout="@layout/activie" android:id="@+id/activ2"/>
+    <include layout="@layout/activie" android:id="@+id/activ3"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:background="#ccc"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="精彩生活圈"
+        android:paddingTop="5pt"
+        android:paddingLeft="5pt"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
